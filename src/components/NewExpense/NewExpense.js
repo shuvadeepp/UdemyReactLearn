@@ -18,7 +18,7 @@ import ExpenseForm from './ExpenseForm';
                 <form>
                     <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
                 </form>
-            </div>
+            </div> 
         );
     }
 
