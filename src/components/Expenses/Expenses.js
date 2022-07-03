@@ -3,8 +3,13 @@ import React, { useState } from 'react';
 import Card from '../UI/Card';
 import ExpenseItem from './ExpenseItem';
 import ExpenseFilter from './ExpenseFilter';
+import ExpensesList from './ExpenseList';
 import './Expenses.css';
 
+const Colour = {
+    color: "white",
+    textAlign: "center"
+};
 // function Expenses (props) {
 const Expenses = (props) => {
 
@@ -28,16 +33,18 @@ const Expenses = (props) => {
                     onChangeFilter={FilterChangeHandler} 
                 />
 
-                {/* This is Dynamic method */}
-                { filteredExpenses.map((expense) => (
+                <ExpensesList items={filteredExpenses} />
+
+                {/* This is Dynamic method and using turnary oparetor */}
+                {/* {filteredExpenses.length === 0 ? <p style={Colour}> Sorry in this year no expenses found! </p> : filteredExpenses.map((expense) => (
                     <ExpenseItem 
                         key={expense.id}
                         title={expense.title} 
                         amount={expense.amount} 
                         date={expense.date} 
                     />
-                )) }
 
+                ))}  */}
 
                 {/* This is Static method */}
                 {/* <ExpenseItem 
